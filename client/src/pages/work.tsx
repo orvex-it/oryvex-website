@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { Navbar, Footer } from "@/components/layout";
-import { ArrowRight, CheckCircle, Cloud, Database, Zap, Brain, Server } from "lucide-react";
+import { CheckCircle, Cloud, Database, Zap, Brain, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
-// Placeholder images – replace with your actual assets
+// Illustrative assets for solution concepts.
 import auctionImg from "@assets/generated_images/real_estate_property_marketplace_platform.png";
 import dashboardImg from "@assets/generated_images/enterprise_admin_dashboard_analytics.png";
 import deliveryImg from "@assets/generated_images/swift_delivery_mobile_app_mockup.png";
-import automationImg from "@assets/Home_ITO_Ps_5a5aac3fda_1764454950507.webp";
-import cloudImg from "@assets/generated_images/real_estate_property_marketplace_platform.png";
-import dataImg from "@assets/generated_images/real_estate_property_marketplace_platform.png";
-import aiChatImg from "@assets/generated_images/real_estate_property_marketplace_platform.png";
-import infraDiagramImg from "@assets/generated_images/real_estate_property_marketplace_platform.png";
+import automationImg from "@assets/generated_images/n8n_workflow_automation_dashboard.png";
+import cloudImg from "@assets/generated_images/data_infrastructure_server_room.png";
+import dataImg from "@assets/generated_images/data_analytics_dashboard_on_monitor.png";
+import aiChatImg from "@assets/generated_images/ai_automation_visualization.png";
 
 export default function Work() {
   return (
@@ -45,13 +44,13 @@ export default function Work() {
       className="max-w-4xl"
     >
       <span className="text-primary font-mono uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 block">
-        Our Expertise by Sector
+        Solution Concepts
       </span>
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-6 sm:mb-8 leading-[0.95]">
         Solutions that <br /> <span className="text-[#0f172999]">drive transformation.</span>
       </h1>
       <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed mx-auto">
-        Across industries, we deliver tailored digital solutions — from web and mobile platforms to AI, data, and cloud engineering.
+        Explore illustrative solution concepts and architecture approaches for web, mobile, AI, data, and cloud. These examples are not client case studies.
       </p>
     </motion.div>
   </div>
@@ -77,12 +76,12 @@ export default function Work() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               <div className="group bg-secondary/20 rounded-lg overflow-hidden">
                 <div className="aspect-video bg-secondary/40 overflow-hidden">
-                  <img src={auctionImg} alt="Online auction platform" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={auctionImg} alt="Marketplace interface concept" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-mono text-primary mb-2">Marketplace • Real‑time bidding</p>
+                  <p className="text-sm font-mono text-primary mb-2">Concept • Real-time bidding</p>
                   <h4 className="text-xl font-bold mb-2">Online Auction Platform</h4>
-                  <p className="text-muted-foreground text-sm">Real‑time bidding engine, automated auction closures, payment escrow, and advanced fraud detection. Handled 10k+ concurrent users during peak events.</p>
+                  <p className="text-muted-foreground text-sm">Real-time bidding architecture with live updates, automated auction closures, payment workflows, role-based administration, and fraud-prevention mechanisms.</p>
                 </div>
               </div>
               <div className="group bg-secondary/20 rounded-lg overflow-hidden">
@@ -90,7 +89,7 @@ export default function Work() {
                   <img src={dashboardImg} alt="Supervision dashboard" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-mono text-primary mb-2">Enterprise • Analytics</p>
+                  <p className="text-sm font-mono text-primary mb-2">Concept • Enterprise analytics</p>
                   <h4 className="text-xl font-bold mb-2">Unified Supervision Dashboard</h4>
                   <p className="text-muted-foreground text-sm">Real‑time KPIs, multi‑source data aggregation, custom alerting, and predictive maintenance for industrial IoT systems.</p>
                 </div>
@@ -100,14 +99,14 @@ export default function Work() {
                   <span className="text-sm">[ Illustration ]</span>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-mono text-primary mb-2">SaaS • Platform</p>
+                  <p className="text-sm font-mono text-primary mb-2">Concept • SaaS platform</p>
                   <h4 className="text-xl font-bold mb-2">B2B Procurement Portal</h4>
                   <p className="text-muted-foreground text-sm">End‑to‑end solution for enterprise procurement, with supplier management, contract lifecycle, and spend analytics.</p>
                 </div>
               </div>
             </div>
             <p className="text-muted-foreground italic border-l-4 border-primary pl-4">
-              And many more web solutions: custom CRMs, e‑learning portals, B2B marketplaces, etc.
+              Other possible web solutions: custom CRMs, e‑learning portals, B2B marketplaces, etc.
             </p>
           </div>
 
@@ -117,12 +116,12 @@ export default function Work() {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="group bg-secondary/20 rounded-lg overflow-hidden">
                 <div className="aspect-video bg-secondary/40 overflow-hidden">
-                  <img src={deliveryImg} alt="Food delivery app" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={deliveryImg} alt="Food delivery app concept" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-mono text-primary mb-2">Logistics • React Native</p>
-                  <h4 className="text-xl font-bold mb-2">SwiftDelivery – Food Delivery App</h4>
-                  <p className="text-muted-foreground text-sm">AI‑powered route optimization, real‑time order tracking, restaurant management system, and customer rewards. Handles 5,000+ daily orders with sub‑30 min average delivery.</p>
+                  <p className="text-sm font-mono text-primary mb-2">Concept • Mobile logistics</p>
+                  <h4 className="text-xl font-bold mb-2">Food Delivery App Concept</h4>
+                  <p className="text-muted-foreground text-sm">Real-time order tracking, route optimization, restaurant operations, customer experiences, and notification workflows designed around a scalable mobile architecture.</p>
                 </div>
               </div>
               <div className="group bg-secondary/20 rounded-lg overflow-hidden">
@@ -130,14 +129,14 @@ export default function Work() {
                   <span className="text-sm">[ Illustration ]</span>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-mono text-primary mb-2">Health & Fitness</p>
+                  <p className="text-sm font-mono text-primary mb-2">Concept • Health & Fitness</p>
                   <h4 className="text-xl font-bold mb-2">Wellness Tracker App</h4>
-                  <p className="text-muted-foreground text-sm">Personalized coaching, activity sync, nutrition logging, and community challenges – 200k+ downloads in first year.</p>
+                  <p className="text-muted-foreground text-sm">Personalized activity tracking, nutrition logging, coaching experiences, device integrations, and community features.</p>
                 </div>
               </div>
             </div>
             <p className="text-muted-foreground italic border-l-4 border-primary pl-4">
-              And many more mobile apps: fintech, e‑commerce, booking, IoT companion, etc.
+              Other possible mobile apps: fintech, e‑commerce, booking, IoT companion, etc.
             </p>
           </div>
 
@@ -147,7 +146,7 @@ export default function Work() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-secondary/20 p-8 rounded-lg">
                 <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                  We help clients make the best architectural decisions by deeply analyzing their existing or planned infrastructure:
+                  We help clients make informed architectural decisions by deeply analyzing their existing or planned infrastructure:
                 </p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex gap-3">
@@ -163,11 +162,11 @@ export default function Work() {
                     <span><strong className="text-foreground">Target architecture:</strong> Proposal of adapted solutions (microservices, event‑driven, data lake) with migration roadmap.</span>
                   </li>
                 </ul>
-                <p className="text-sm text-muted-foreground">Result: robust, cost‑effective infrastructures ready to scale.</p>
+                <p className="text-sm text-muted-foreground">Goal: maintainable infrastructure with clear capacity and cost tradeoffs.</p>
               </div>
               <div className="bg-secondary/20 rounded-lg p-6 flex flex-col justify-center">
-                <img src={infraDiagramImg} alt="Infrastructure diagram" className="rounded-lg mb-4" />
-                <p className="text-sm text-muted-foreground text-center">Example of scalable architecture with load balancing and monitoring.</p>
+                <img src={cloudImg} alt="Cloud infrastructure concept" className="rounded-lg mb-4" />
+                <p className="text-sm text-muted-foreground text-center">Concept visualization of cloud infrastructure.</p>
               </div>
             </div>
           </div>
@@ -190,7 +189,7 @@ export default function Work() {
             <div>
               <h3 className="text-2xl font-bold mb-4">Integration & Migration</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                We accompany the migration of your legacy applications to the cloud (AWS, Azure, GCP) or to containerized architectures (Docker, Kubernetes). We ensure service continuity and operational cost reduction.
+                We accompany the migration of your legacy applications to the cloud (AWS, Azure, GCP) or to containerized architectures (Docker, Kubernetes). We plan migrations around service continuity, operational constraints, and cost visibility.
               </p>
               <h3 className="text-2xl font-bold mb-4">Scalable Hosting</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -203,7 +202,7 @@ export default function Work() {
             </div>
             <div className="bg-secondary/20 rounded-lg p-6 flex flex-col justify-center">
               <img src={cloudImg} alt="Cloud infrastructure" className="rounded-lg mb-4" />
-              <p className="text-sm text-muted-foreground text-center">Example of scalable architecture with load balancing and monitoring.</p>
+              <p className="text-sm text-muted-foreground text-center">Concept visualization of cloud infrastructure.</p>
             </div>
           </div>
         </motion.section>
@@ -224,7 +223,7 @@ export default function Work() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-                We master the entire data lifecycle, from massive storage to business value creation.
+                We design data systems that connect storage, processing, governance, and analytics.
               </p>
               <ul className="space-y-4">
                 <li><strong className="text-foreground">Big Data:</strong> Data lake architecture (Delta Lake, Iceberg), distributed processing (Spark, Flink), real‑time ingestion (Kafka, Kinesis).</li>
@@ -232,11 +231,11 @@ export default function Work() {
                 <li><strong className="text-foreground">Data Warehousing:</strong> Modeling (star schema, data vault), modern ETL/ELT (dbt, Airbyte), query optimization on cloud warehouses (BigQuery, Snowflake, Redshift).</li>
                 <li><strong className="text-foreground">Governance & Quality:</strong> Implementation of data catalogs, lineage, and automated quality checks.</li>
               </ul>
-              <p className="mt-6 text-muted-foreground">Result: reliable, accessible, and actionable data to drive your strategy.</p>
+              <p className="mt-6 text-muted-foreground">Goal: reliable, accessible, and actionable data to inform your strategy.</p>
             </div>
             <div className="bg-secondary/20 rounded-lg p-6">
               <img src={dataImg} alt="Data analytics dashboard" className="rounded-lg mb-4" />
-              <p className="text-sm text-muted-foreground text-center">Example BI dashboard integrating real‑time and historical data.</p>
+              <p className="text-sm text-muted-foreground text-center">Illustrative analytics dashboard concept.</p>
             </div>
           </div>
         </motion.section>
@@ -257,7 +256,7 @@ export default function Work() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-secondary/20 rounded-lg p-6">
               <img src={automationImg} alt="N8N automation workflows" className="rounded-lg mb-4" />
-              <p className="text-sm text-muted-foreground text-center">Connected workflows (CRM, email, Slack, API) with n8n.</p>
+              <p className="text-sm text-muted-foreground text-center">Illustrative workflow automation concept.</p>
             </div>
             <div>
               <p className="text-lg leading-relaxed text-muted-foreground mb-4">
@@ -268,7 +267,7 @@ export default function Work() {
                 <li><strong className="text-foreground">Python RPA:</strong> Robotic process automation (document extraction, form filling, web scraping, mass email sending).</li>
                 <li><strong className="text-foreground">Data orchestration:</strong> Synchronization between databases, APIs, CSV/Excel files, with monitoring and error alerts.</li>
               </ul>
-              <p className="mt-4 text-muted-foreground">Example: 80% reduction in customer order processing time thanks to an n8n workflow integrating ERP + carrier + emailing.</p>
+              <p className="mt-4 text-muted-foreground">Example use case: connect an ERP, carrier APIs, and email workflows to reduce manual order-processing steps and shorten operational turnaround time.</p>
             </div>
           </div>
         </motion.section>
@@ -298,12 +297,12 @@ export default function Work() {
               </p>
               <h3 className="text-2xl font-bold mb-4">LLM & Fine‑tuning</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Fine‑tuning of open‑source models (Llama, Mistral) or use of APIs (GPT‑4, Claude) to generate content, automate responses, or assist business teams. We guarantee data confidentiality via on‑premise or VPC deployments.
+                Fine‑tuning of open‑source models (Llama, Mistral) or use of APIs (GPT‑4, Claude) to generate content, automate responses, or assist business teams. For sensitive workloads, we can design deployment options such as on-premise or private VPC environments to keep data flows under tighter organizational control.
               </p>
             </div>
             <div className="bg-secondary/20 rounded-lg p-6">
-              <img src={aiChatImg} alt="AI chatbot interface" className="rounded-lg mb-4" />
-              <p className="text-sm text-muted-foreground text-center">RAG chatbot integrating an internal document base.</p>
+              <img src={aiChatImg} alt="AI systems concept" className="rounded-lg mb-4" />
+              <p className="text-sm text-muted-foreground text-center">Illustration of AI-enabled systems.</p>
             </div>
           </div>
         </motion.section>

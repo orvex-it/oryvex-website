@@ -37,7 +37,7 @@ export default function Process() {
       title: "Launch & Support",
       description: "We deploy your project and provide ongoing support, monitoring, and optimization for long-term success.",
       icon: Rocket,
-      details: ["Deployment", "24/7 Monitoring", "Performance Analytics", "Technical Support"]
+      details: ["Deployment", "Monitoring & Alerting", "Performance Analytics", "Technical Support"]
     }
   ];
 
@@ -52,7 +52,7 @@ export default function Process() {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-hidden">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative min-h-screen h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-28 pb-12 overflow-hidden">
         <motion.div
           className="absolute inset-0"
           animate={{
@@ -81,7 +81,7 @@ export default function Process() {
               Process that <br/> <span className="text-[#0f172999]">delivers results.</span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
-              A proven methodology combining strategic thinking, technical excellence, and continuous collaboration. Your success is our priority at every stage.
+              A structured methodology combining strategic thinking, technical excellence, and continuous collaboration. Every stage is designed to reduce uncertainty and keep the product moving forward.
             </p>
             
             <motion.div
@@ -92,10 +92,10 @@ export default function Process() {
             >
               {[
                 { num: "5", label: "Phases" },
-                { num: "100%", label: "Transparency" },
-                { num: "24/7", label: "Support" },
-                { num: "∞", label: "Value" },
-                { num: "✓", label: "Delivered" }
+                { num: "✓", label: "Clear Scope" },
+                { num: "↻", label: "Fast Feedback" },
+                { num: "QA", label: "Quality Gates" },
+                { num: "→", label: "Handover" }
               ].map((item, i) => (
                 <motion.div
                   key={i}

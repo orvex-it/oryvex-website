@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -19,8 +20,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "/services" },
-    // { name: "Work", href: "/work" },
-    { name: "Team", href: "/company" },
+    { name: "Company", href: "/company" },
     { name: "Process", href: "/process" },
     { name: "Contact", href: "/contact" },
   ];
@@ -38,7 +38,7 @@ export function Navbar() {
           {/* Logo - Left */}
           <Link href="/">
             <div className="text-2xl font-bold font-heading cursor-pointer tracking-tighter text-foreground hover:text-primary transition-colors shrink-0">
-              ORVEX<span className="text-primary">.</span>
+              {siteConfig.name.toUpperCase()}<span className="text-primary">.</span>
             </div>
           </Link>
 
@@ -99,6 +99,9 @@ export function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
               className="text-foreground hover:text-primary transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,6 +115,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          id="mobile-navigation"
           className="md:hidden bg-background border-b border-border"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -127,7 +131,7 @@ export function Navbar() {
             ))}
             <div className="pt-4 px-3">
               <Link href="/contact">
-                <Button className="w-full rounded-none">Get Started</Button>
+                <Button onClick={() => setIsOpen(false)} className="w-full rounded-none">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -141,24 +145,7 @@ export function Footer() {
   return (
     <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
       <div className="container mx-auto px-4">
-        {/* Top Section: Brand & Nav */}
-        {/*<div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
-          <div className="text-3xl font-bold font-heading tracking-tighter text-white">
-            ORVEX<span className="text-primary">.</span>
-          </div>
-
-          <nav className="flex flex-wrap gap-x-8 gap-y-4">
-            {["Home", "Services", "Company", "Process", "Contact"].map((item) => (
-              <Link key={item} href={item === "Home" ? "/" : `/${item.toLowerCase()}`}>
-                <span className="text-sm font-medium text-gray-400 hover:text-primary transition-colors cursor-pointer uppercase tracking-wider">
-                  {item}
-                </span>
-              </Link>
-            ))}
-          </nav>
-        </div>*/}
-
-        {/* Middle Section: CTA & Contact */}
+        {/* CTA & Contact */}
         <div className="flex justify-center mb-20">
           <div className="max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
@@ -175,38 +162,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Contact Info
-        <div className="flex flex-col justify-center md:items-end space-y-8">
-          <div>
-            <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Get in touch</p>
-            <a href="mailto:hello@orvex.com" className="text-2xl md:text-3xl font-bold hover:text-primary transition-colors">
-              hello@orvex.com
-            </a>
-          </div>
-          <div>
-            <p className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">Follow us</p>
-            <div className="flex gap-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-lg text-gray-400 hover:text-primary transition-colors">
-                LinkedIn
-              </a>
-              <a href="#" className="text-lg text-gray-400 hover:text-primary transition-colors">
-                Twitter
-              </a>
-              <a href="#" className="text-lg text-gray-400 hover:text-primary transition-colors">
-                Instagram
-              </a>
-            </div>
-          </div>
-        </div> */}
-
         {/* Bottom Section: Copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Orvex. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Imprint</a>
-          </div>
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>

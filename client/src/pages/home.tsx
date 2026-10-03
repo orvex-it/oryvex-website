@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Code, Smartphone, Database, Brain, CheckCircle2, ShoppingCart, Umbrella, Briefcase, BookOpen, Wrench, Users, Heart, GraduationCap, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -10,28 +10,7 @@ import aiImg from "@assets/generated_images/ai_automation_visualization.png";
 import dataImg from "@assets/generated_images/data_infrastructure_server_room.png";
 import heroIllustration from "@assets/generated_images/orvex_dev_illustration.jpg";
 
-// Animation Variants - Smoother, more "editorial"
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const yParallax = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
   const services = [
     {
       title: "Web & Platforms",
@@ -42,14 +21,14 @@ export default function Home() {
     },
     {
       title: "Mobile Engineering",
-      desc: "Native-feel mobile applications for iOS and Android that dominate the App Store charts.",
+      desc: "High-quality mobile applications for iOS and Android, designed for speed, reliability, and a polished native feel.",
       tags: ["React Native", "iOS", "Android"],
       image: mobileImg,
       icon: <Smartphone className="w-6 h-6" />
     },
     {
       title: "AI & Automation",
-      desc: "Custom machine learning models and automated workflows that reduce operational costs by 40%.",
+      desc: "AI-powered systems and automated workflows that remove repetitive work, connect operations, and support faster decisions.",
       tags: ["OpenAI", "Python", "TensorFlow"],
       image: aiImg,
       icon: <Brain className="w-6 h-6" />
@@ -63,10 +42,10 @@ export default function Home() {
     }
   ];
 
-  const heroStats = [
-    { value: "2+", label: "years experience" },
-    { value: "30+", label: "projects success" },
-    { value: "98%", label: "satisfied rate" },
+  const heroPillars = [
+    { value: "Craft", label: "product-first engineering" },
+    { value: "Scale", label: "cloud-ready architecture" },
+    { value: "Evolve", label: "AI-enhanced systems" },
   ];
 
   return (
@@ -74,7 +53,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section — full viewport height */}
-      <section className="relative h-screen min-h-[100dvh] max-h-[100dvh] pt-20 bg-background overflow-hidden flex items-stretch">
+      <section className="relative min-h-[100dvh] lg:h-screen pt-20 bg-background overflow-hidden flex items-stretch">
         <div className="container px-4 sm:px-6 mx-auto relative z-10 w-full h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 h-full items-center py-4 lg:py-6">
             {/* Left column — content */}
@@ -89,7 +68,7 @@ export default function Home() {
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-8 leading-relaxed max-w-md">
-                We blend human creativity with machine intelligence to craft software that defines categories — from web platforms to AI-powered products.
+                We blend human creativity with machine intelligence to craft thoughtful, maintainable software — from web platforms to AI-powered products.
               </p>
 
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-10">
@@ -113,8 +92,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12">
-                {heroStats.map((stat, index) => (
+              <div className="grid grid-cols-3 gap-3 sm:gap-6">
+                {heroPillars.map((stat, index) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
@@ -178,7 +157,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section - "The CodeLeap Way" equivalent */}
+      {/* Services */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-secondary/15">
+        <div className="container px-4 sm:px-6 mx-auto">
+          <span className="text-sm font-mono uppercase tracking-widest text-primary mb-4 block">Our Services</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-12">Engineering for your next step.</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <motion.article
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.1 }}
+                className="bg-background border border-border/30 rounded-xl overflow-hidden"
+              >
+                <img src={service.image} alt={`${service.title} concept`} loading="lazy" className="w-full aspect-[4/3] object-cover" />
+                <div className="p-6">
+                  <div className="text-primary mb-4" aria-hidden="true">{service.icon}</div>
+                  <h3 className="text-xl font-bold font-heading mb-3">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
+                  <ul className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+                    {service.tags.map((tag) => <li key={tag} className="px-2 py-1 bg-secondary rounded-full">{tag}</li>)}
+                  </ul>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Process Section */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -194,7 +202,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="aspect-square relative z-10"
               >
-                <img src={officeImg} alt="Our Process" className="w-full h-full object-cover rounded-sm shadow-2xl" />
+                <img src={officeImg} alt="Digital engineering collaboration concept" className="w-full h-full object-cover rounded-sm shadow-2xl" />
                 {/* Decorative frame */}
                 <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-primary/30 -z-10" />
               </motion.div>
@@ -240,7 +248,7 @@ export default function Home() {
         className="py-16 sm:py-24 lg:py-32 bg-secondary/30 overflow-hidden">
         <div className="container px-4 sm:px-6 mx-auto mb-10 sm:mb-20">
           <span className="text-sm font-mono uppercase tracking-widest text-primary mb-2 block">Our Arsenal</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading">Technologies We Master</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading">Technologies We Work With</h2>
         </div>
 
         <div className="relative overflow-hidden">
@@ -312,7 +320,7 @@ export default function Home() {
               <p className="text-sm font-mono uppercase tracking-widest text-primary mb-4 block">Industries We Serve</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-6">Sectors & Specialties</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                We've built solutions across diverse industries, understanding unique challenges and delivering tailored technology for each sector.
+                Different industries come with different workflows, constraints, and users. We adapt product design, architecture, automation, and data flows to the reality of each domain.
               </p>
               <Link href="/contact">
                 <Button className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 transition-all">
@@ -327,42 +335,42 @@ export default function Home() {
                   {
                     icon: ShoppingCart,
                     title: "E-commerce",
-                    desc: "We create first-class e-commerce interfaces as well as cloud infrastructures for our customers."
+                    desc: "Conversion-focused storefronts, catalog and checkout experiences, back-office tools, and scalable commerce integrations."
                   },
                   {
                     icon: Umbrella,
                     title: "Insurance",
-                    desc: "Together with our partners from the insurance industry, we develop holistic concepts and products."
+                    desc: "Digital portals, document workflows, claims experiences, automation, and data-driven operational tools."
                   },
                   {
                     icon: Briefcase,
                     title: "Finance",
-                    desc: "We have experience in the implementation of banking software and know the potential of a modern banking infrastructure."
+                    desc: "Secure digital platforms, dashboards, integrations, data pipelines, and automation for modern financial workflows."
                   },
                   {
                     icon: BookOpen,
                     title: "E-learning",
-                    desc: "Learning is one of the most important pillars of society for us. No wonder, that we have already worked with partners to implement e-learning solutions."
+                    desc: "Learning platforms, content management, assessments, progress tracking, and collaborative educational experiences."
                   },
                   {
                     icon: Wrench,
-                    title: "Industrial maintenance",
-                    desc: "Agile maintenance, is it possible? We developed it and worked directly with the target group to achieve the best possible experience for them."
+                    title: "Industrial Operations",
+                    desc: "Monitoring dashboards, asset workflows, alerts, maintenance tooling, and data-driven operational visibility."
                   },
                   {
                     icon: Users,
                     title: "Human Resources",
-                    desc: "No modern company can build a professional team without HR software. We provide you with a solution for this in the shortest possible time."
+                    desc: "Employee portals, onboarding experiences, internal workflows, document management, and HR automation."
                   },
                   {
                     icon: Heart,
                     title: "Healthcare",
-                    desc: "What is more important than our health? During the pandemic, for example, our teams worked on software for distributing vaccines."
+                    desc: "User-centered digital workflows, secure information experiences, operational dashboards, and intelligent automation."
                   },
                   {
                     icon: GraduationCap,
                     title: "Science & Education",
-                    desc: "You never stop learning, they say. Neither do we. We develop educational software designed for the modern 2020s."
+                    desc: "Research tools, data platforms, collaborative environments, and digital products designed around knowledge sharing."
                   }
                 ].map((sector, index) => {
                   const IconComponent = sector.icon;
@@ -388,7 +396,7 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
-      {/* Testimonials Section */}
+      {/* How We Build */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -397,71 +405,28 @@ export default function Home() {
         className="py-16 sm:py-24 lg:py-32 bg-secondary/15">
         <div className="container px-4 sm:px-6 mx-auto">
           <div className="mb-12 sm:mb-24">
-            <span className="text-sm font-mono uppercase tracking-widest text-primary mb-4 block">What Clients Say</span>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold font-heading mb-6">Trusted by Industry Leaders</h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">Real feedback from the companies we've partnered with to transform their digital vision into reality.</p>
+            <span className="text-sm font-mono uppercase tracking-widest text-primary mb-4 block">How We Build</span>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold font-heading mb-6">Strong products start with strong decisions.</h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">We combine product thinking, disciplined engineering, and purposeful automation to turn complex ideas into clear, maintainable digital systems.</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
-              {
-                quote: "Orvex transformed our platform. Not just technically brilliant, but they truly understood our business.",
-                author: "Sarah Chen",
-                role: "CEO, PropertyHub",
-                company: "Real Estate Tech"
-              },
-              {
-                quote: "Working with their team was like having world-class engineers and designers under one roof. Exceptional.",
-                author: "Marcus Johnson",
-                role: "Founder, SwiftDelivery",
-                company: "Logistics"
-              },
-              {
-                quote: "They delivered an enterprise dashboard that our team immediately fell in love with. ROI was apparent within weeks.",
-                author: "Emma Rodriguez",
-                role: "CTO, Nexus Solutions",
-                company: "Enterprise Software"
-              }
-            ].map((testimonial, index) => (
+              { title: "Clarity Before Code", description: "We align on users, objectives, constraints, and architecture before complexity enters the codebase." },
+              { title: "Engineering That Lasts", description: "Maintainable architecture, clean code, documentation, testing, and scalability are part of the product — not an afterthought." },
+              { title: "AI With a Purpose", description: "We use AI and automation where they improve workflows, decision-making, or user experience — never just for the buzzword." },
+            ].map((principle, index) => (
               <motion.div
-                key={index}
+                key={principle.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-5%" }}
                 transition={{ duration: 0.7, delay: index * 0.15 }}
                 whileHover={{ y: -8 }}
-                className="group relative"
+                className="group p-8 bg-background rounded-xl border border-border/30 hover:border-primary/40 hover:shadow-lg transition-colors"
               >
-                {/* Background card */}
-                <div className="absolute inset-0 bg-background rounded-xl border border-border/30 group-hover:border-primary/40 group-hover:shadow-lg transition-all duration-500 -z-10" />
-
-                {/* Content */}
-                <div className="p-8 rounded-xl relative">
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-primary text-lg group-hover:scale-110 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>★</span>
-                    ))}
-                  </div>
-
-                  {/* Quote with opening quote mark */}
-                  <div className="mb-8 relative">
-                    <div className="text-6xl text-primary/10 absolute -top-2 -left-2 group-hover:text-primary/20 transition-colors">"</div>
-                    <p className="text-lg leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      {testimonial.quote}
-                    </p>
-                  </div>
-
-                  {/* Divider */}
-                  <div className="w-8 h-1 bg-gradient-to-r from-primary to-transparent mb-6 group-hover:w-16 transition-all duration-500" />
-
-                  {/* Author Info */}
-                  <div>
-                    <p className="font-bold font-heading text-foreground text-lg group-hover:text-primary transition-colors">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p>
-                    <p className="text-xs text-primary/70 uppercase tracking-widest font-mono">{testimonial.company}</p>
-                  </div>
-                </div>
+                <CheckCircle2 className="w-8 h-8 text-primary mb-6" aria-hidden="true" />
+                <h3 className="text-xl font-bold font-heading mb-4 group-hover:text-primary transition-colors">{principle.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{principle.description}</p>
               </motion.div>
             ))}
           </div>
@@ -489,7 +454,7 @@ export default function Home() {
                 Have an <br />idea?
               </h2>
               <p className="text-xl text-foreground/70 mb-12 max-w-2xl leading-relaxed">
-                Let's build something that makes your competitors nervous. We dive deep, challenge assumptions, and deliver products that create tangible business value.
+                Let's turn your idea into a clear product direction. We explore the problem, challenge assumptions, and build around meaningful business goals.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">

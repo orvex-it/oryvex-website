@@ -47,12 +47,12 @@ export default function Company() {
         >
           <img
             src={teamImage}
-            alt="Orvex Team"
+            alt="Orvex digital engineering team concept"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-8 left-8 text-white">
-            <p className="font-mono text-sm uppercase tracking-widest">Casablanca HQ • 2025</p>
+            <p className="font-mono text-sm uppercase tracking-widest">ORVEX • DIGITAL ENGINEERING</p>
           </div>
         </motion.div>
       </section>
@@ -61,25 +61,25 @@ export default function Company() {
   <div className="container mx-auto px-4">
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
       <div className="lg:col-span-4">
-        <h2 className="text-4xl font-bold font-heading mb-6 sticky top-32">Our Journey</h2>
+        <h2 className="text-4xl font-bold font-heading mb-6 sticky top-32">What Drives Us</h2>
       </div>
       <div className="lg:col-span-8 space-y-12 text-lg leading-relaxed text-muted-foreground text-justify">
         <p>
-          <strong className="text-foreground text-2xl block mb-4">2 years of digital innovation across diverse sectors.</strong>
-          For the past two years, we've been at the forefront of technological innovation, delivering transformative solutions across fintech, healthcare, e-commerce, logistics, and beyond. Our team combines deep technical expertise with creative problem-solving to build products that truly make a difference.
+          <strong className="text-foreground text-2xl block mb-4">Built to turn ambitious ideas into dependable digital products.</strong>
+          Orvex is built around a simple belief: technology should feel intentional, understandable, and made to last. We combine software engineering, cloud, data, automation, and AI to transform ambitious ideas into production-ready digital systems.
         </p>
         <p>
-          <strong className="text-foreground block mb-2">From ideation to launch — we're with you every step.</strong>
-          We partner with our clients throughout their entire digital transformation journey. It starts with understanding your vision, then moves through strategy, design, development, and finally — launching you into the global market. We use the latest technologies and best practices to ensure your success.
+          <strong className="text-foreground block mb-2">From the first question to production — one coherent process.</strong>
+          We approach every product through the same lens: understand the problem, simplify the complexity, design the right architecture, build with precision, and create a foundation that can evolve as the business grows.
         </p>
         <p>
-          Whether you're taking your first steps into the digital world or ready to scale, we provide the expertise, dedication, and cutting-edge solutions you need to thrive in today's competitive landscape.
+          Whether the goal is to launch a new product, modernize an existing platform, automate operations, or introduce AI into a workflow, our focus remains the same: clarity, maintainability, and meaningful business value.
         </p>
       </div>
     </div>
   </div>
 </section>
-      {/* Team Members Section - Founder */}
+      {/* Core Domains */}
    <section className="py-32">
   <div className="container mx-auto px-4">
     <motion.div
@@ -91,7 +91,7 @@ export default function Company() {
       <p className="font-mono uppercase tracking-widest text-sm text-primary mb-4">OUR EXPERTISE</p>
       <h2 className="text-5xl md:text-6xl font-bold font-heading mb-2">Our Core Domains</h2>
       <p className="text-xl text-muted-foreground mt-4 max-w-3xl mx-auto">
-        We master the entire technology stack to deliver end-to-end solutions
+        We bring software, cloud, data, automation, AI, and security together to build coherent end-to-end systems.
       </p>
     </motion.div>
 
@@ -312,7 +312,7 @@ export default function Company() {
             {[
               { title: "Obsessive Quality", description: "Good enough is not in our vocabulary. We polish until it shines. Every pixel, every line of code reflects our commitment to excellence." },
               { title: "Radical Collaboration", description: "No silos. Designers code, developers design, and clients are partners. The best ideas emerge from diverse perspectives." },
-              { title: "Global Perspective", description: "We build for the world, considering accessibility and localization from day one. Our work reaches diverse audiences across continents." },
+              { title: "Global Perspective", description: "We design with accessibility, localization, and diverse usage contexts in mind from day one." },
               { title: "Outcome Over Output", description: "We measure success by business impact, not just lines of code shipped. Your success is our success." },
               { title: "Human First", description: "Technology serves people. We build ethical, user-centric products that make a positive impact." },
               { title: "Continuous Growth", description: "We are students of our craft, constantly learning and evolving. Every project teaches us something new." }
@@ -332,15 +332,15 @@ export default function Company() {
           </div>
         </div>
       </section>
-      {/* Stats */}
+      {/* Delivery Principles */}
       <section className="py-20 border-t border-border bg-black text-background">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
             {[
-              { label: "Years Active", value: "2+" },
-              { label: "Solutions Shipped", value: "30+" },
-              { label: " Clients", value: "10+" },
-              { label: "Availability", value: "24h/7j" },
+              { label: "Delivery", value: "End-to-End" },
+              { label: "Mindset", value: "Product-First" },
+              { label: "Engineering", value: "Scalable" },
+              { label: "Collaboration", value: "Transparent" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -350,8 +350,8 @@ export default function Company() {
                 transition={{ delay: index * 0.1 }}
                 className="px-4"
               >
-                <div className="text-5xl md:text-7xl font-bold font-heading text-primary mb-2">{stat.value}</div>
-                <div className="text-background/60 font-medium tracking-widest uppercase text-sm">{stat.label}</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl break-words font-bold font-heading text-primary mb-2">{stat.value}</div>
+                <div className="text-background/60 font-medium tracking-wide uppercase text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
