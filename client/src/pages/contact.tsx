@@ -163,7 +163,7 @@ export default function Contact() {
               Frequently asked questions
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-10 sm:mb-12 max-w-2xl">
-              Quick answers about how we work, timelines, and getting started with Orvex.
+              Quick answers about how we work, timelines, and getting started with Oryvex.
             </p>
 
             <Accordion type="single" collapsible className="w-full">

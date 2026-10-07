@@ -27,7 +27,7 @@ export default function Company() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-6 sm:mb-8 leading-tight"
           >
-            We are <span className="text-[#0f172999]">Orvex.</span>
+            We are <span className="text-[#0f172999]">Oryvex.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -47,12 +47,12 @@ export default function Company() {
         >
           <img
             src={teamImage}
-            alt="Orvex digital engineering team concept"
+            alt="Oryvex digital engineering team concept"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <div className="absolute bottom-8 left-8 text-white">
-            <p className="font-mono text-sm uppercase tracking-widest">ORVEX • DIGITAL ENGINEERING</p>
+            <p className="font-mono text-sm uppercase tracking-widest">ORYVEX • DIGITAL ENGINEERING</p>
           </div>
         </motion.div>
       </section>
@@ -66,7 +66,7 @@ export default function Company() {
       <div className="lg:col-span-8 space-y-12 text-lg leading-relaxed text-muted-foreground text-justify">
         <p>
           <strong className="text-foreground text-2xl block mb-4">Built to turn ambitious ideas into dependable digital products.</strong>
-          Orvex is built around a simple belief: technology should feel intentional, understandable, and made to last. We combine software engineering, cloud, data, automation, and AI to transform ambitious ideas into production-ready digital systems.
+          Oryvex is built around a simple belief: technology should feel intentional, understandable, and made to last. We combine software engineering, cloud, data, automation, and AI to transform ambitious ideas into production-ready digital systems.
         </p>
         <p>
           <strong className="text-foreground block mb-2">From the first question to production — one coherent process.</strong>

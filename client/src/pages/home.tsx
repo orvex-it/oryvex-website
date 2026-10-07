@@ -100,7 +100,7 @@ export default function Home() {
               <div className="relative z-10 h-full w-full flex items-center justify-center lg:justify-end">
                 <motion.img
                   src={heroIllustration}
-                  alt="Illustration développeur Orvex — laptop, code et cloud"
+                  alt="Illustration développeur Oryvex — laptop, code et cloud"
                   className="h-full w-auto max-w-full object-contain drop-shadow-xl relative z-10"
                   initial={{ scale: 0.92, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
