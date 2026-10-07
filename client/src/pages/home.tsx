@@ -1,47 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Smartphone, Database, Brain, CheckCircle2, ShoppingCart, Umbrella, Briefcase, BookOpen, Wrench, Users, Heart, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShoppingCart, Umbrella, Briefcase, BookOpen, Wrench, Users, Heart, GraduationCap, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar, Footer } from "@/components/layout";
 import officeImg from "@assets/generated_images/bright_modern_creative_agency_office_with_team.png";
-import webImg from "@assets/generated_images/modern_web_development_on_laptop_screen.png";
-import mobileImg from "@assets/generated_images/hand_holding_phone_with_fitness_app.png";
-import aiImg from "@assets/generated_images/ai_automation_visualization.png";
-import dataImg from "@assets/generated_images/data_infrastructure_server_room.png";
 import heroIllustration from "@assets/generated_images/orvex_dev_illustration.jpg";
 
 export default function Home() {
-  const services = [
-    {
-      title: "Web & Platforms",
-      desc: "Enterprise-grade React applications, progressive web apps, and immersive digital experiences.",
-      tags: ["Next.js", "React", "TypeScript"],
-      image: webImg,
-      icon: <Code className="w-6 h-6" />
-    },
-    {
-      title: "Mobile Engineering",
-      desc: "High-quality mobile applications for iOS and Android, designed for speed, reliability, and a polished native feel.",
-      tags: ["React Native", "iOS", "Android"],
-      image: mobileImg,
-      icon: <Smartphone className="w-6 h-6" />
-    },
-    {
-      title: "AI & Automation",
-      desc: "AI-powered systems and automated workflows that remove repetitive work, connect operations, and support faster decisions.",
-      tags: ["OpenAI", "Python", "TensorFlow"],
-      image: aiImg,
-      icon: <Brain className="w-6 h-6" />
-    },
-    {
-      title: "Data Infrastructure",
-      desc: "Scalable cloud architecture and big data pipelines designed for real-time analytics.",
-      tags: ["AWS", "PostgreSQL", "Redis"],
-      image: dataImg,
-      icon: <Database className="w-6 h-6" />
-    }
-  ];
-
   const heroPillars = [
     { value: "Craft", label: "product-first engineering" },
     { value: "Scale", label: "cloud-ready architecture" },
@@ -75,7 +40,7 @@ export default function Home() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="relative text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 font-heading rounded-sm bg-primary text-primary-foreground hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                    className="relative min-w-[11rem] sm:min-w-[14rem] text-sm sm:text-base px-10 sm:px-14 py-5 sm:py-6 font-heading rounded-sm bg-primary text-primary-foreground hover:shadow-xl transition-all duration-300 group overflow-hidden"
                   >
                     Let's Talk
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +50,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 font-heading rounded-sm border-2 border-foreground/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+                    className="min-w-[11rem] sm:min-w-[14rem] text-sm sm:text-base px-10 sm:px-14 py-5 sm:py-6 font-heading rounded-sm border-2 border-foreground/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
                   >
                     Start Project
                   </Button>
@@ -157,35 +122,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-secondary/15">
-        <div className="container px-4 sm:px-6 mx-auto">
-          <span className="text-sm font-mono uppercase tracking-widest text-primary mb-4 block">Our Services</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-12">Engineering for your next step.</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.article
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className="bg-background border border-border/30 rounded-xl overflow-hidden"
-              >
-                <img src={service.image} alt={`${service.title} concept`} loading="lazy" className="w-full aspect-[4/3] object-cover" />
-                <div className="p-6">
-                  <div className="text-primary mb-4" aria-hidden="true">{service.icon}</div>
-                  <h3 className="text-xl font-bold font-heading mb-3">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
-                  <ul className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-                    {service.tags.map((tag) => <li key={tag} className="px-2 py-1 bg-secondary rounded-full">{tag}</li>)}
-                  </ul>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* Process Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -253,47 +189,53 @@ export default function Home() {
 
         <div className="relative overflow-hidden">
           <motion.div
-            animate={{ x: [0, -3000] }}
-            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            className="flex gap-6 px-4"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+            className="flex gap-6 px-4 w-max"
           >
             {[
               "React",
+              "Spring Boot",
+              "Kafka",
+              "AWS",
+              "Azure",
+              "Google Cloud",
+              "Kubernetes",
               "Node.js",
               "TypeScript",
               "Next.js",
-              "PostgreSQL",
-              "AWS",
-              "Python",
               "Java",
+              "Python",
+              "PostgreSQL",
               "Docker",
               "Redis",
-              "N8N",
-              "Framer Motion",
-              "Tailwind CSS",
               "GraphQL",
               "React Native",
+              "Terraform",
+              "N8N",
+              "Tailwind CSS",
+            ].concat([
               "React",
-              "Node.js",
-              "TypeScript",
-              "Next.js",
-              "PostgreSQL",
-              "React",
-              "Node.js",
-              "TypeScript",
-              "Next.js",
-              "PostgreSQL",
+              "Spring Boot",
+              "Kafka",
               "AWS",
-              "Python",
+              "Azure",
+              "Google Cloud",
+              "Kubernetes",
+              "Node.js",
+              "TypeScript",
+              "Next.js",
               "Java",
+              "Python",
+              "PostgreSQL",
               "Docker",
               "Redis",
-              "N8N",
-              "Framer Motion",
-              "Tailwind CSS",
               "GraphQL",
               "React Native",
-            ].map((tech, index) => (
+              "Terraform",
+              "N8N",
+              "Tailwind CSS",
+            ]).map((tech, index) => (
               <motion.div
                 key={index}
                 className="flex-shrink-0 group cursor-pointer"
