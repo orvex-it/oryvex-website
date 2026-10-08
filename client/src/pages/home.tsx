@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar, Footer } from "@/components/layout";
 import officeImg from "@assets/generated_images/bright_modern_creative_agency_office_with_team.png";
-import heroIllustration from "@assets/generated_images/orvex_dev_illustration.jpg";
+import heroPhoto from "@assets/generated_images/oryvex_hero_office.jpg";
 
 export default function Home() {
   const heroPillars = [
@@ -99,9 +99,9 @@ export default function Home() {
 
               <div className="relative z-10 h-full w-full flex items-center justify-center lg:justify-end">
                 <motion.img
-                  src={heroIllustration}
-                  alt="Illustration développeur Oryvex — laptop, code et cloud"
-                  className="h-full w-auto max-w-full object-contain drop-shadow-xl relative z-10"
+                  src={heroPhoto}
+                  alt="Équipe Oryvex au travail dans un bureau moderne"
+                  className="h-full w-full object-cover rounded-sm shadow-2xl relative z-10"
                   initial={{ scale: 0.92, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
