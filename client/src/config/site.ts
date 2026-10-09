@@ -3,7 +3,7 @@ export const siteConfig = {
   location: "Technopark Casablanca",
   address: "Route de Nouaceur, angle RS 114 et CT 1029",
   city: "Casablanca, Maroc",
-  email: "hello@oryvex.com",
-  inquiryEmail: "info@oryvex.com",
+  email: "it.orvex@gmail.com",
+  inquiryEmail: "it.orvex@gmail.com",
   careersEmail: "careers@oryvex.com",
 } as const;

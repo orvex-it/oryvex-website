@@ -27,11 +27,6 @@ const faqs = [
       "Our services are designed for early-stage startups planning a first product and established companies modernizing existing systems. We adapt scope and architecture to your stage and constraints.",
   },
   {
-    question: "Which technologies do you use?",
-    answer:
-      "Our stack includes React, Next.js, TypeScript, React Native, Node.js, Python, PostgreSQL, AWS, and modern AI tooling. We choose technologies based on your product needs — not trends.",
-  },
-  {
     question: "How do we get started?",
     answer:
       `Reach out via ${siteConfig.email}. We’ll schedule a short discovery session, align on objectives, then send a proposal with scope, timeline, and investment. No commitment required until you’re ready.`,
@@ -91,21 +86,7 @@ export default function Contact() {
                 </a>
               </div>
 
-              <div className="group cursor-pointer">
-                <h3 className="text-2xl font-bold font-heading mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
-                  Join the Team{" "}
-                  <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                </h3>
-                <p className="text-muted-foreground text-lg mb-2">
-                  We're always looking for talent.
-                </p>
-                <a
-                  href={`mailto:${siteConfig.careersEmail}`}
-                  className="text-xl font-mono hover:text-primary transition-colors"
-                >
-                  {siteConfig.careersEmail}
-                </a>
-              </div>
+            
             </div>
 
             <div className="mt-20">
