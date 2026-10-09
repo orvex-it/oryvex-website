@@ -88,7 +88,7 @@ export default function Services() {
           >
             <span className="text-primary font-mono uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 block">Our Services</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-4 sm:mb-6 leading-tight">
-              <span className="text-[#0f172999]">End-to-End</span> <br /> <span className="text-foreground">Technology Solutions</span>
+              <span className="text-[#0f172999] dark:text-white/45">End-to-End</span> <br /> <span className="text-foreground">Technology Solutions</span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
               From concept to deployment, we deliver comprehensive solutions tailored to your unique business challenges.

@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +13,7 @@ import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import Company from "@/pages/company";
 import Process from "@/pages/process";
+// import Work from "@/pages/work";
 
 function AnimatedRoute({ component: Component, duration, alt }: { component: React.ComponentType; duration?: number; alt?: boolean }) {
   if (alt) {
@@ -36,6 +38,7 @@ function Router() {
       <Route path="/company" component={() => <AnimatedRoute component={Company} duration={3} />} />
       <Route path="/contact" component={() => <AnimatedRoute component={Contact} alt />} />
       <Route path="/process" component={() => <AnimatedRoute component={Process} duration={3} />} />
+      {/* <Route path="/work" component={() => <AnimatedRoute component={Work} duration={3} />} /> */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -43,13 +46,15 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ScrollToTop />
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="oryvex-theme">
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <ScrollToTop />
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

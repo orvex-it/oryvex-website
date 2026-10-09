@@ -78,6 +78,29 @@
   --radius: 0rem;
 }
 
+.dark {
+  color-scheme: dark;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 96%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 96%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 199 78% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 8%;
+  --secondary-foreground: 0 0% 96%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 68%;
+  --accent: 199 78% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 199 78% 52%;
+}
+
 /* Add some custom utility classes for the tech feel */
 @layer utilities {
   .text-gradient {
@@ -94,11 +117,15 @@
   }
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,

@@ -27,7 +27,7 @@ export default function Company() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-6 sm:mb-8 leading-tight"
           >
-            We are <span className="text-[#0f172999]">Oryvex.</span>
+            We are <span className="text-[#0f172999] dark:text-white/45">Oryvex.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -333,7 +333,7 @@ export default function Company() {
         </div>
       </section>
       {/* Delivery Principles */}
-      <section className="py-20 border-t border-border bg-black text-background">
+      <section className="py-20 border-t border-border bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
             {[
@@ -351,7 +351,7 @@ export default function Company() {
                 className="px-4"
               >
                 <div className="text-xl sm:text-2xl lg:text-3xl break-words font-bold font-heading text-primary mb-2">{stat.value}</div>
-                <div className="text-background/60 font-medium tracking-wide uppercase text-xs sm:text-sm">{stat.label}</div>
+                <div className="text-white/60 font-medium tracking-wide uppercase text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>

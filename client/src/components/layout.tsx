@@ -1,9 +1,51 @@
 import { siteConfig } from "@/config/site";
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const dark = mounted && theme === "dark";
+
+  return (
+    <motion.button
+      type="button"
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      onClick={() => setTheme(dark ? "light" : "dark")}
+      className="relative inline-flex items-center justify-center bg-transparent text-foreground/80"
+      whileHover="hover"
+      initial="initial"
+    >
+      <motion.span
+        className="inline-flex"
+        variants={{
+          initial: { scale: 1, y: 0 },
+          hover: { scale: 1.4, y: -12, color: "#167DB5" },
+        }}
+        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      >
+        {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      </motion.span>
+      <motion.span
+        className="absolute bottom-0 left-0 h-0.5 bg-primary"
+        variants={{
+          initial: { width: "0%", opacity: 0 },
+          hover: { width: "100%", opacity: 1 },
+        }}
+        transition={{ duration: 0.3 }}
+      />
+    </motion.button>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +62,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "/services" },
+    // { name: "Work", href: "/work" },
     { name: "Company", href: "/company" },
     { name: "Process", href: "/process" },
     { name: "Contact", href: "/contact" },
@@ -76,7 +119,8 @@ export function Navbar() {
           </div>
 
           {/* Button - Right */}
-          <div className="hidden md:flex shrink-0">
+          <div className="hidden md:flex shrink-0 items-center gap-8">
+            <ThemeToggle />
             <Link href="/contact">
               <motion.div
                 whileHover={{ scale: 1.45, rotate: 3 }}
@@ -129,10 +173,13 @@ export function Navbar() {
                 </span>
               </Link>
             ))}
-            <div className="pt-4 px-3">
-              <Link href="/contact">
-                <Button onClick={() => setIsOpen(false)} className="w-full rounded-none">Get Started</Button>
-              </Link>
+            <div className="flex items-center gap-6 px-3 pt-4">
+              <ThemeToggle />
+              <div className="flex-1">
+                <Link href="/contact">
+                  <Button onClick={() => setIsOpen(false)} className="w-full rounded-none">Get Started</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -78,7 +78,7 @@ export default function Process() {
           >
             <span className="text-primary font-mono uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4 block">How We Work</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-6 sm:mb-8 leading-[0.95]">
-              Process that <br/> <span className="text-[#0f172999]">delivers results.</span>
+              Process that <br/> <span className="text-[#0f172999] dark:text-white/45">delivers results.</span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A structured methodology combining strategic thinking, technical excellence, and continuous collaboration. Every stage is designed to reduce uncertainty and keep the product moving forward.

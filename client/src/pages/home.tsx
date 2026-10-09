@@ -14,7 +14,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-clip selection:bg-primary/30">
       <Navbar />
 
       {/* Hero Section — full viewport height */}

@@ -2,7 +2,7 @@ import { siteConfig } from "@/config/site";
 import { motion } from "framer-motion";
 import { Navbar, Footer } from "@/components/layout";
 import { MapPin, ArrowRight } from "lucide-react";
-import systemsImg from "@assets/generated_images/abstract_tech_network_background_with_connecting_nodes_and_data_flow.png";
+import technoparkImg from "@assets/technopark_casablanca.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -55,7 +55,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-heading mb-8 sm:mb-12 leading-tight">
-              Contact <br /> <span className="text-[#0f172999]">Us</span>
+              Contact <br /> <span className="text-[#0f172999] dark:text-white/45">Us</span>
             </h1>
 
             <div className="space-y-12">
@@ -113,9 +113,16 @@ export default function Contact() {
                 Our Location
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="border-l-2 border-primary pl-6">
+                <a
+                  href="https://maps.google.com/?q=Technopark+Casablanca+Route+de+Nouaceur"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border-l-2 border-primary pl-6 hover:text-primary transition-colors"
+                >
                   <h4 className="text-xl font-bold mb-2">{siteConfig.location}</h4>
-                </div>
+                  <p className="text-muted-foreground">{siteConfig.address}</p>
+                  <p className="text-muted-foreground">{siteConfig.city}</p>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -128,8 +135,8 @@ export default function Contact() {
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-2xl">
               <img
-                src={systemsImg}
-                alt="Abstract visualization of connected digital systems"
+                src={technoparkImg}
+                alt="Technopark Casablanca, Route de Nouaceur"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s]"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
@@ -138,7 +145,10 @@ export default function Contact() {
                   <span className="font-mono uppercase tracking-widest text-sm">{siteConfig.location}</span>
                 </div>
                 <p className="text-lg font-light opacity-90">
-                  Based in Casablanca. Built for collaboration beyond borders.
+                  {siteConfig.address}
+                </p>
+                <p className="mt-2 text-[10px] uppercase tracking-wide text-white/60">
+                  Photo · Turdyfirst · CC BY-SA 4.0
                 </p>
               </div>
             </div>
