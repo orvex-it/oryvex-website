@@ -21,7 +21,7 @@ function ThemeToggle() {
       type="button"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(dark ? "light" : "dark")}
-      className="relative inline-flex items-center justify-center bg-transparent text-foreground/80"
+      className="relative inline-flex items-center justify-center bg-transparent text-[#0f172a] hover:text-[#167DB5] dark:text-white"
       whileHover="hover"
       initial="initial"
     >
@@ -29,7 +29,7 @@ function ThemeToggle() {
         className="inline-flex"
         variants={{
           initial: { scale: 1, y: 0 },
-          hover: { scale: 1.4, y: -12, color: "#167DB5" },
+          hover: { scale: 1.4, y: -12 },
         }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
@@ -95,11 +95,13 @@ export function Navbar() {
                   initial="initial"
                 >
                   <motion.span
-                    className={`cursor-pointer text-sm font-medium ${location === link.href ? "text-primary" : "text-foreground/80"
+                    className={`cursor-pointer text-sm font-medium hover:text-[#167DB5] ${location === link.href
+                      ? "text-[#167DB5] dark:text-[#7dceff]"
+                      : "text-[#0f172a] dark:text-white"
                       }`}
                     variants={{
                       initial: { scale: 1, y: 0, letterSpacing: "0em" },
-                      hover: { scale: 1.4, y: -12, letterSpacing: "0.08em", color: "#167DB5" }
+                      hover: { scale: 1.4, y: -12, letterSpacing: "0.08em" }
                     }}
                     transition={{ type: "spring", stiffness: 200, damping: 10 }}
                   >
@@ -166,7 +168,10 @@ export function Navbar() {
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <span
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary cursor-pointer"
+                  className={`block cursor-pointer px-3 py-2 text-base font-medium hover:text-[#167DB5] ${location === link.href
+                    ? "text-[#167DB5] dark:text-[#7dceff]"
+                    : "text-[#0f172a] dark:text-white"
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
